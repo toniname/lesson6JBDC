@@ -10,7 +10,7 @@ public class Main {
 
         // Отримання з'єднання з БД
         try (Connection connection = database.getConnection()) {
-            // Ваша логіка роботи з БД тут
+            // логіка роботи з БД тут
         } catch (SQLException e) {
             e.printStackTrace();
             // Обробка помилок роботи з БД

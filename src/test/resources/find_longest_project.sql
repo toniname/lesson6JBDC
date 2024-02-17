@@ -1,4 +1,4 @@
--- Знайдіть проєкт з найбільшою тривалістю в місяцях
+-- проєкт з найбільшою тривалістю в місяцях
 SELECT p.NAME AS NAME, MONTHS_BETWEEN(p.FINISH_DATE, p.START_DATE) AS MONTH_COUNT
 FROM project p
 ORDER BY MONTHS_BETWEEN(p.FINISH_DATE, p.START_DATE) DESC

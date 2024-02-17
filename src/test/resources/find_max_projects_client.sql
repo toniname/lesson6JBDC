@@ -1,4 +1,4 @@
--- Знайдіть клієнта з найбільшою кількістю проєктів
+-- Знайти клієнта з найбільшою кількістю проєктів
 SELECT c.NAME AS NAME, COUNT(p.ID) AS PROJECT_COUNT
 FROM client c
          JOIN project p ON c.ID = p.CLIENT_ID
