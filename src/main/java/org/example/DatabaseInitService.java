@@ -1,14 +1,20 @@
 package org.example;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+
 public class DatabaseInitService {
 
-    Logger logger = Logger.getLogger(getClass().getName());
+
+    private static final Logger logger = LoggerFactory.getLogger(DatabaseInitService.class);
+
     public static void main(String[] args) {
         try {
             // Отримуємо підключення до бази даних
@@ -20,9 +26,9 @@ public class DatabaseInitService {
             // Виконуємо запити
             executeSqlScript(connection, sqlScript);
 
-            Logger.getLogger("Database initialized successfully.");
+            logger.info("Database initialized successfully.");
         } catch (SQLException | IOException e) {
-            e.printStackTrace();
+            logger.error("Failed to initialize database.", e);
         }
     }
 
@@ -47,4 +53,3 @@ public class DatabaseInitService {
         }
     }
 }
-

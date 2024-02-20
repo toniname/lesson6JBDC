@@ -9,21 +9,19 @@ import java.util.logging.Logger;
 
 public class DatabasePopulateService {
 
-    Logger logger = Logger.getLogger(getClass().getName());
-    public static void main(String[] args) {
-        try {
-            // Отримуємо підключення до бази даних
-            Connection connection = Database.getInstance().getConnection();
+    private static final Logger logger = Logger.getLogger(DatabasePopulateService.class.getName());
 
+    public static void main(String[] args) {
+        try (Connection connection = Database.getInstance().getConnection()) {
             // Зчитуємо SQL-запити з файлу
             String sqlScript = readSqlScript("C:\\Users\\Toni\\IdeaProjects\\Lesson6JDBC\\src\\test\\resources\\populate_db.sql");
 
             // Виконуємо запити
-            executeSqlScript(connection, sqlScript);
+            addSqlScriptToBatch(connection, sqlScript);
 
-            Logger.getLogger("Database populated successfully.");
+            logger.info("Database populated successfully.");
         } catch (SQLException | IOException e) {
-            e.printStackTrace();
+            logger.severe("Error while populating the database: " + e.getMessage());
         }
     }
 
@@ -33,7 +31,7 @@ public class DatabasePopulateService {
         return Files.readString(path);
     }
 
-    private static void executeSqlScript(Connection connection, String sqlScript) throws SQLException {
+    private static void addSqlScriptToBatch(Connection connection, String sqlScript) throws SQLException {
         try (Statement statement = connection.createStatement()) {
             // Розділяємо SQL-скрипт на окремі запити
             String[] queries = sqlScript.split(";");

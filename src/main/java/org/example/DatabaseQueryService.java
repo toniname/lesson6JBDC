@@ -14,7 +14,7 @@ public class DatabaseQueryService {
     public List<MaxProjectCountClient> findMaxProjectsClient() {
         try {
             Connection connection = Database.getInstance().getConnection();
-            String sqlQuery = readSqlScript("C:\\Users\\Toni\\IdeaProjects\\Lesson6JDBC\\src\\test\\resources\\find_max_projects_client.sql");
+            String sqlQuery = readSqlScript();
 
             try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
                 ResultSet resultSet = statement.executeQuery();
@@ -36,8 +36,8 @@ public class DatabaseQueryService {
         return maxProjectCountClients;
     }
 
-    private String readSqlScript(String filePath) throws IOException {
-        Path path = Path.of(filePath);
+    private String readSqlScript() throws IOException {
+        Path path = Path.of("C:\\Users\\Toni\\IdeaProjects\\Lesson6JDBC\\src\\test\\resources\\find_max_projects_client.sql");
         return Files.readString(path);
     }
 }
