@@ -8,6 +8,7 @@ public class Main {
         // Отримання екземпляру класу Database
         Database database = Database.getInstance();
 
+
         // Отримання з'єднання з БД
         try (Connection connection = database.getConnection()) {
             // логіка роботи з БД тут

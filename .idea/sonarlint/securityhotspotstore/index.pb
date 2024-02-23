@@ -48,3 +48,15 @@ Q.idea/sonarlint/securityhotspotstore/f/0/f07866736216be0ee2aba49e392191aeae700a
 Q.idea/sonarlint/securityhotspotstore/2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3,1\0\1017d171139053a6ceaff055b7159ba14e80dc44
 w
 G.idea/sonarlint/issuestore/2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3,9\a\9aed88f31eac276604c6355c1adcc0bce1f80fd6
+Z
+*src/main/java/org/example/AddSomesimg.java,6\f\6fcfdc272d1c3329a1dbbc357eaea9cbf84e594a
+^
+.src/main/java/org/example/MaxSalaryWorker.java,c\7\c7f260ec0e1a90bc5831acdb49ea7dbce8686812
+`
+0src/main/java/org/example/MaxLongestProject.java,4\d\4d6727c161c2a36a6ad637ce36277d169b019aae
+c
+3src/main/java/org/example/YoungestEldestWorker.java,e\b\eb94d22fa9c7ab79e31e4a87fb26cb88761cc1cd
+a
+1src/main/java/org/example/PrintProjectPrices.java,7\b\7b11b738bc52c5071ba1c509181fc763c7722e56
+]
+-src/main/java/org/example/LongestProject.java,7\7\778366c5982f34363e4005d8400d6afcce7f96be
